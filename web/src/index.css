@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* shadcn tokens — ocean tuned (derived from app icon) */
+    --background: 204 45% 97%;
+    --foreground: 210 55% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 55% 13%;
+    --primary: 205 78% 42%;            /* calendar blue from icon */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 204 50% 93%;
+    --secondary-foreground: 208 60% 25%;
+    --muted: 204 35% 93%;
+    --muted-foreground: 208 20% 44%;
+    --accent: 200 85% 94%;
+    --accent-foreground: 205 78% 30%;
+    --destructive: 2 78% 58%;          /* the red calendar dot */
+    --destructive-foreground: 0 0% 100%;
+    --border: 206 30% 88%;
+    --radius: 0.75rem;
+  }
+
+  * { @apply border-border; }
+
+  html, body {
+    @apply bg-background text-foreground font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+  }
+
+  /* tabular numerals for showtimes */
+  .tnum { font-variant-numeric: tabular-nums; }
+}
+
+@layer utilities {
+  .header-ocean {
+    background:
+      radial-gradient(120% 90% at 85% -20%, hsl(197 90% 62% / .55) 0%, transparent 60%),
+      linear-gradient(168deg, hsl(201 85% 46%) 0%, hsl(207 82% 38%) 58%, hsl(211 78% 32%) 100%);
+  }
+  .safe-top { padding-top: max(env(safe-area-inset-top), 0px); }
+  .safe-bottom { padding-bottom: max(env(safe-area-inset-bottom), 12px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* ---- swipe navigation transitions ---- */
+@layer utilities {
+  @keyframes slide-in-from-right {
+    from { opacity: 0; transform: translateX(22px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes slide-in-from-left {
+    from { opacity: 0; transform: translateX(-22px); }
+    to   { opacity: 1; transform: none; }
+  }
+  .anim-from-right { animation: slide-in-from-right 0.22s ease-out; }
+  .anim-from-left  { animation: slide-in-from-left 0.22s ease-out; }
+  .touch-pan-y { touch-action: pan-y; }
+}

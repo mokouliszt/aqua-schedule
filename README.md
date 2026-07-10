@@ -4,10 +4,10 @@
   <img src="docs/icon.png" alt="AquaSchedule アイコン" width="128">
 </p>
 
-名古屋港水族館の公式サイトから、指定日のイベント
+名古屋港水族館の公式サイトの内部APIから、指定日のイベント
 スケジュールを取得して表示する Android アプリ。起動時は当日のスケジュールを表示する。
 
-## API 仕様（調査結果）
+## API 仕様
 
 公式カレンダーページ https://nagoyaaqua.jp/calendar/ の日付クリック時に呼ばれる:
 

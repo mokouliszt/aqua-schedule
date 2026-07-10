@@ -1,5 +1,9 @@
 # 名港水族館スケジュール (AquaSchedule)
 
+<p align="center">
+  <img src="docs/icon.png" alt="AquaSchedule アイコン" width="128">
+</p>
+
 名古屋港水族館の公式サイトから、指定日のイベント
 スケジュールを取得して表示する Android アプリ。起動時は当日のスケジュールを表示する。
 
